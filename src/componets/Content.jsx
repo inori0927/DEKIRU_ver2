@@ -8,14 +8,14 @@ import Typography from '@material-ui/core/Typography';
 import Basic from "./Basic";
 import Optional from "./Optional";
 import Confirm from "./Confirm";
-
+import { KEYS, setItem, getItem, removeItem } from "./LocalStorage";
 
 export const UserInputData = React.createContext();
 function getSteps() {
     return [
-        'フォーム　1',
-        'フォーム　2',
-        'フォーム　3'
+        'タイトル',
+        '詳細',
+        '確認項目'
     ];
 }
 
@@ -33,8 +33,8 @@ function getStepContent(stepIndex) {
 }
 
 function Content() {
-    const [activeStep, setActiveStep] = React.useState(0);
     const steps = getSteps();
+    const [activeStep, setActiveStep] = React.useState(0);
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
@@ -44,6 +44,7 @@ function Content() {
     const handleReset = () => {
         setActiveStep(0);
     };
+    
     return (
         <Grid container>
             <Grid sm={2}/>

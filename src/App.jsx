@@ -8,13 +8,16 @@ import { Grid } from '@material-ui/core';
 import  Header  from './componets/Heder';
 import Content from './componets/Content';
 //import Content from './components/Content';
+import { KEYS, setItem, getItem, removeItem } from "./LocalStorage";
 
 export default class App extends React.Component {
   //初期化メソッド
   constructor(props) {
     super(props);
+    state: {
+      myData: {} 
+    }
   }
-
   render() {
     return (
       <div>

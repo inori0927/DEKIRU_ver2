@@ -5,23 +5,17 @@ import { Button } from "@material-ui/core";
 import Tooltip from '@material-ui/core/Tooltip';
 
 function Optional(props) {
+
     const { control, handleSubmit } = useForm({
         defaultValues: {
             multilineText: "",
         },
     });
-    const onSubmit = (action) => {
-        if(action === 'back') {
-            props.handleBack();
-        } else if (action === 'next') {
-            props.handleNext();
-        }
-    };
     return (
         <Grid container>
             <Grid sm={2}/>
             <Grid lg={8} sm={8} spacing={10}>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                
                 <Controller
                         control={control}
                         name="textBox"
@@ -63,21 +57,6 @@ function Optional(props) {
                             </Tooltip>
                         )}
                     />
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={() => onSubmit("back")}
-                    >
-                        戻る
-                    </Button>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={() => onSubmit("next")}
-                    >
-                        次へ
-                    </Button>
-                </form>
             </Grid>
         </Grid>
     )

@@ -18,7 +18,8 @@ var item = {
 }
 
 function Confirm(props) {
-    const { currentState } = useContext(UserInputData);
+
+    /*const { currentState } = useContext(UserInputData);
     const onSubmit = () => {
         alert(JSON.stringify(currentState));
     };
@@ -45,7 +46,7 @@ function Confirm(props) {
             );
             id++;
         }
-    }
+    }*/
     return (
         <Grid container>
             <TableContainer component={Paper}>
@@ -57,7 +58,7 @@ function Confirm(props) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {
+                        {/*{
                             inputDataLists.map(function(elem) {
                                 return (
                                     <TableRow key={elem.id}>
@@ -66,16 +67,10 @@ function Confirm(props) {
                                     </TableRow>
                                 )
                             })
-                        }
+                        }}*/}
                     </TableBody>
                 </Table>
             </TableContainer>
-            <Button variant="contained" color="primary" onClick={props.handleBack}>
-                戻る
-            </Button>
-            <Button variant="contained" color="primary" onClick={onSubmit}>
-                送信
-            </Button>
         </Grid>
     )
 }

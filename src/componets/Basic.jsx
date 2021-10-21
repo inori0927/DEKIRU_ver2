@@ -6,6 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
 function Basic(props) {
+
     const { control, handleSubmit } = useForm({
         defaultValues: {
             checkBox: false,
@@ -49,8 +50,8 @@ function Basic(props) {
                                 id="select"
                                 select
                             >
-                                <MenuItem value="one">選択肢1</MenuItem>
-                                <MenuItem value="two">選択肢2</MenuItem>
+                                <MenuItem value="one">介護関連</MenuItem>
+                                <MenuItem value="two">育児関連</MenuItem>
                                 <MenuItem value="three">選択肢3</MenuItem>
                             </TextField>
                         )}
