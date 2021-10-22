@@ -1,33 +1,23 @@
-import logo from './logo.svg';
-
 import React from 'react';
-import './assets/styles/style.css'
-import { categoryList } from './componets';
-import { category } from './componets';
-import { Grid } from '@material-ui/core';
-import  Header  from './componets/Heder';
-import Content from './componets/Content';
-//import Content from './components/Content';
-import { KEYS, setItem, getItem, removeItem } from "./LocalStorage";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import page from './tmp';
+import itasaka from './itasaka';
+import gakiya from './gakiya';
+import takahashi from './takahashi';
 
-export default class App extends React.Component {
-  //初期化メソッド
-  constructor(props) {
-    super(props);
-    state: {
-      myData: {} 
-    }
-  }
-  render() {
-    return (
-      <div>
-        <Grid container direction="column">
-          <Header />
-          <div style={{ padding: 30 }}>
-            <Content />
-          </div>
-        </Grid>
-      </div>
+class App extends React.Component {
+  render(){
+    return(
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={page} />
+          <Route exact path="/itasaka.jsx" component={itasaka} />
+          <Route exact path="/gakiya.jsx" component={gakiya} />
+          <Route exact path="/takahashi.jsx" component={takahashi} />
+        </Switch>
+      </BrowserRouter>
     );
-  }
+  };
 }
+
+export default App;
