@@ -12,7 +12,7 @@ class page extends React.Component {
                 <br/>
                 <Link to={`/gakiya.jsx`}>我喜屋</Link>
                 <br/>
-                <Link to={`/takahasi.jsx`}>高橋</Link>
+                <Link to={`/takahashi.jsx`}>高橋</Link>
             </div>
         );
     }

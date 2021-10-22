@@ -1,6 +1,6 @@
 import React from 'react';
 
-class gakiya extends React.Component {
+class takahashi extends React.Component {
 
     render() {
         return (
@@ -11,4 +11,4 @@ class gakiya extends React.Component {
     }
 }
 
-export default gakiya;
+export default takahashi;
