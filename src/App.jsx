@@ -1,9 +1,14 @@
+
+//react のお決まり
 import React from 'react';
+
+//ルーティング用
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import page from './tmp';
 import itasaka from './itasaka';
 import gakiya from './gakiya';
 import takahashi from './takahashi';
+
 
 class App extends React.Component {
   render(){
