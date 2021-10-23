@@ -2,7 +2,7 @@ import React from 'react';
 const gakiya = () => {
     return (
         <div>
-            Hello
+            Hello---
         </div>
     );
 }
