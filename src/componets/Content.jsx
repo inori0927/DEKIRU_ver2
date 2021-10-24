@@ -8,9 +8,9 @@ import Typography from '@material-ui/core/Typography';
 import Basic from "./Basic";
 import Optional from "./Optional";
 import Confirm from "./Confirm";
-import { KEYS, setItem, getItem, removeItem } from "./LocalStorage";
+//import { KEYS, setItem, getItem, removeItem } from "./LocalStorage";
 
-export const UserInputData = React.createContext();
+
 function getSteps() {
     return [
         'タイトル',
