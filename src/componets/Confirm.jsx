@@ -24,7 +24,6 @@ function Confirm(props) {
     const storedTiltle = localStorage.getItem('title')
     const storedDetail = localStorage.getItem('detail')
 
-
     return (
         <Grid container>
             <TableContainer component={Paper}>

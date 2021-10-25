@@ -8,6 +8,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Content from './Content';
+import QuestionList from './QuestionList';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -66,8 +67,8 @@ export default function TopBar() {
           aria-label="full width tabs example"
         >
           <Tab label="質問" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="質問一覧" {...a11yProps(1)} />
+          <Tab label="マイページ" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -79,7 +80,7 @@ export default function TopBar() {
           <Content />
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          質問一覧 
+          <QuestionList /> 
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
           mypage
