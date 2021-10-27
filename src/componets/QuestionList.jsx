@@ -47,8 +47,8 @@ export default function QuestionList() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title="DBからとってくる「Title」"
+        subheader="September 14, 2016（DBからとってくる）"
       />
       {/*画像の利用の場合使用
       <CardMedia

@@ -9,6 +9,10 @@ import Header from './componets/Heder';
 import Content from './componets/Content';
 import Box from '@mui/material/Box';
 import TopBar from './componets/TopBar'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import page from './tmp';
+import gakiya from './gakiya';
+import takahashi from './takahashi';
 
 //import Content from './components/Content';
 //import { KEYS, setItem, getItem, removeItem } from "./LocalStorage";
@@ -24,10 +28,18 @@ export default class App extends React.Component {
     return (
       <Grid container direction="column">
         <Header />
-        <Box sx={{ width: '100%', typography: 'body1' }}>
-          <TopBar />
-        </Box>
+ 
+        <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={page} />
+          <Route exact path="/componets/TopBar.jsx" component={TopBar} />
+          <Route exact path="/gakiya.jsx" component={gakiya} />
+          <Route exact path="/takahashi.jsx" component={takahashi} />
+        </Switch>
+      </BrowserRouter>
+        
       </Grid>
+      
     );
   }
 }
