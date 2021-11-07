@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Content from './Content';
 import QuestionList from './QuestionList';
+import Mypage from './Mypage';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -83,7 +84,7 @@ export default function TopBar() {
           <QuestionList /> 
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          mypage
+          <Mypage />
         </TabPanel>
       </SwipeableViews>
     </Box>

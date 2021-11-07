@@ -14,9 +14,6 @@ import page from './tmp';
 import gakiya from './gakiya';
 import takahashi from './takahashi';
 
-//import Content from './components/Content';
-//import { KEYS, setItem, getItem, removeItem } from "./LocalStorage";
-
 export default class App extends React.Component {
   //初期化メソッド
   constructor(props) {
@@ -28,7 +25,6 @@ export default class App extends React.Component {
     return (
       <Grid container direction="column">
         <Header />
- 
         <BrowserRouter>
         <Switch>
           <Route exact path="/" component={page} />
