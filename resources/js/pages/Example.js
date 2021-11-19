@@ -11,7 +11,7 @@ function Example() {
                         <div className="card-header">React導入できたわな？？</div>
 
                         <div className="card-body">pages下に移動できた？</div>
-                        <Button color="primary" variant="contained">Hello World</Button> 
+                        <Button color="primary" variant="contained">HOMEに遷移ボタン</Button> 
                     </div>
                 </div>
             </div>
@@ -20,7 +20,3 @@ function Example() {
 }
 
 export default Example;
-
-if (document.getElementById('app')) {
-    ReactDOM.render(<Example />, document.getElementById('app'));
-}
