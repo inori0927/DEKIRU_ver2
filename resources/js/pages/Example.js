@@ -10,7 +10,7 @@ function Example() {
                     <div className="card">
                         <div className="card-header">React導入できたわな？？</div>
 
-                        <div className="card-body">I'm an example component!</div>
+                        <div className="card-body">pages下に移動できた？</div>
                         <Button color="primary" variant="contained">Hello World</Button> 
                     </div>
                 </div>
