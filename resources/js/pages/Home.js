@@ -38,7 +38,6 @@ function Home() {
         .get('/api/posts')
         .then(response => {
             setPosts(response.data);
-            console.log(response.data);
         })
         .catch(() => {
             console.log('通信に失敗しました');
@@ -66,7 +65,6 @@ function Home() {
             content: formData.content
         })
         .then((res) => {
-            //戻り値をtodosにセット
             const tempPosts = posts
             tempPosts.push(res.data);
             setPosts(tempPosts)
@@ -84,7 +82,7 @@ function Home() {
       rows.push({
           name: post.name,
           content: post.content,
-          editBtn: <Button color="secondary" variant="contained">編集</Button>,
+          editBtn: <Button color="secondary" variant="contained" key={post.id}  href={`/post/edit/${post.id}`}>編集</Button>,
           deleteBtn: <Button color="primary" variant="contained">完了</Button>,
       })
   );

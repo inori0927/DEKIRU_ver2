@@ -7,6 +7,7 @@ import {
   } from 'react-router-dom';
 import Example from './pages/Example';
 import Home from './pages/Home';
+import PostEdit from './pages/PostEdit';
 
   function App() {
     return (
@@ -14,6 +15,7 @@ import Home from './pages/Home';
             <Routes>
               <Route path='/' exact element={<Home />} />
               <Route path='/example' exact element={<Example />} />
+              <Route path='/post/edit/:id' exact element={<PostEdit />} />
             </Routes>
         </div>
     );
