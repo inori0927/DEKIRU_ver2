@@ -17043,6 +17043,9 @@ function Skyway() {
             id: "my-video",
             width: "400px",
             ref: localVideo,
+            style: {
+              transform: 'scale(-1,1)'
+            },
             autoPlay: true,
             muted: true,
             playsInline: true

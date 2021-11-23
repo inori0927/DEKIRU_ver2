@@ -30,6 +30,7 @@ function Skyway() {
                       id="my-video"
                       width="400px"
                       ref={localVideo}
+                      style={{transform: 'scale(-1,1)'}}
                       autoPlay muted playsInline></video>
                       {/* <Button color="primary" variant="contained" href={'/'}>HOMEに遷移ボタン</Button>  */}
                   </div>
