@@ -8,6 +8,7 @@ import {
 import Example from './pages/Example';
 import Home from './pages/Home';
 import PostEdit from './pages/PostEdit';
+import Skyway from './pages/Skyway';
 
   function App() {
     return (
@@ -16,6 +17,7 @@ import PostEdit from './pages/PostEdit';
               <Route path='/' exact element={<Home />} />
               <Route path='/example' exact element={<Example />} />
               <Route path='/post/edit/:id' exact element={<PostEdit />} />
+              <Route path='/skyway' exact element={<Skyway />} />
             </Routes>
         </div>
     );
