@@ -20,6 +20,6 @@ Route::group(['middleware' => 'api'], function(){
   Route::post('update', 'App\Http\Controllers\Api\PostController@update');
 });
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
