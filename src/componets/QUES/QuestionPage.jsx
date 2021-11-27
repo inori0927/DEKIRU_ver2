@@ -11,14 +11,6 @@ function QuestionPage(props) {
     const [title, setTitle] = React.useState(localStorage.getItem('title'));
     const [detail, setDetail] = React.useState(localStorage.getItem('detail'));
 
-    const handleTitleChange = (event) => {
-        setTitle(event.target.value);
-        localStorage.setItem('title', event.target.value);
-    };
-    const handleDetailChange = (event) => {
-        setDetail(event.target.value);
-        localStorage.setItem('detail', event.target.value);
-    };
     return (
         <Grid container>
             <Grid sm={2} />
@@ -28,8 +20,7 @@ function QuestionPage(props) {
                     fullWidth
                     margin="normal"
                     value={title}
-                    placeholder="【至急】〇〇〇..."
-                    onChange={handleTitleChange}
+                    
                 />
                 {/* TODO/音声認識ソフトを追加 */}
                 <Tooltip
@@ -45,12 +36,12 @@ function QuestionPage(props) {
                         multiline
                         variant="outlined"
                         value={detail}
-                        onChange={handleDetailChange}
                     />
                 </Tooltip>
                 <Grid container spacing={3} alignItems="center" justify="center" margin="5px">
                     <Button
-                        variant="secondary"
+                    color="secondary"
+                        variant="contained"
                         style={{ margin: "5px", fontSize: "20px", padding: "0" }}
                     >
                         解答DEKIRU

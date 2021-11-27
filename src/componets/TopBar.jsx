@@ -12,7 +12,7 @@ import QuestionList from './QuestionList';
 import Mypage from './USERS/Mypage';
 import { Link  as LinkRouter } from 'react-router-dom';
 import QuestionPage from './QUES/QuestionPage'
-
+import QuestionUser from './QUES/QuestionUesr'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -71,9 +71,8 @@ export default function TopBar() {
         >
           <Tab label="質問" {...a11yProps(0)} />
           <Tab label="質問一覧" {...a11yProps(1)} />
-          <Tab label="マイページ" {...a11yProps(2)} />
-          <Tab label="質問中" {...a11yProps(3)} />
-          <Tab label="" {...a11yProps(4)} />
+          <Tab label="質問中" {...a11yProps(2)} />
+          <Tab label="" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -89,10 +88,7 @@ export default function TopBar() {
           <QuestionList /> 
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          <Mypage />
-        </TabPanel>
-        <TabPanel value={value} index={3} dir={theme.direction}>
-          <QuestionPage />
+          <QuestionUser />
         </TabPanel>
       </SwipeableViews>
     </Box>
