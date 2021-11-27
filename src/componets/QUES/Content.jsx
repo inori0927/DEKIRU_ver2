@@ -60,11 +60,7 @@ function Content() {
                     ))}
                 </Stepper>
                 {activeStep === steps.length ? (
-                    <div>
-                        <Typography >全ステップ完了</Typography>
-                        <Button onClick={handleReset}>リセット</Button>
-                        <Button >キャンセル</Button>
-                    </div>
+                    <Basic />
                 ) : (
                     <div>
                         <Typography >{getStepContent(activeStep)}</Typography>

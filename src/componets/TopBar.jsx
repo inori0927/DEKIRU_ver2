@@ -11,6 +11,8 @@ import Content from './QUES/Content';
 import QuestionList from './QuestionList';
 import Mypage from './USERS/Mypage';
 import { Link  as LinkRouter } from 'react-router-dom';
+import QuestionPage from './QUES/QuestionPage'
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -24,7 +26,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: 4 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -48,7 +50,6 @@ function a11yProps(index) {
 export default function TopBar() {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -71,6 +72,8 @@ export default function TopBar() {
           <Tab label="質問" {...a11yProps(0)} />
           <Tab label="質問一覧" {...a11yProps(1)} />
           <Tab label="マイページ" {...a11yProps(2)} />
+          <Tab label="質問中" {...a11yProps(3)} />
+          <Tab label="" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -87,6 +90,9 @@ export default function TopBar() {
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
           <Mypage />
+        </TabPanel>
+        <TabPanel value={value} index={3} dir={theme.direction}>
+          <QuestionPage />
         </TabPanel>
       </SwipeableViews>
     </Box>

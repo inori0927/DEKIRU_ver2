@@ -21,6 +21,7 @@ import BasicDetail from './componets/USERS/BasicDetail';
 import Confirm from './componets/QUES/Confirm';
 import QuestionList from './componets/QuestionList';
 import Mypage from './componets/USERS/Mypage';
+import QuestionPage from './componets/QUES/QuestionPage';
 
 export default class App extends React.Component {
   //初期化メソッド
@@ -37,13 +38,12 @@ export default class App extends React.Component {
           <Route exact path="/" component={login} />
           <Route exact path="/componets/SignUp" component={SignUp} />
           <Route exact path="/componets/TopBar" component={TopBar} />
+          <Route exact path={"/componets/TopBar/QuettionPage"} component={QuestionPage} />
           <Route exact path={"/componets/TopBar/Question"} component={Basic} />
           <Route exact path={"/componets/TopBar/QuestionList"} component={QuestionList} />
           <Route exact path={"/componets/TopBar/Mypage"} component={Mypage} />
-
           <Route exact path={"/componets/TopBar/Question/Detail"} component={BasicDetail} />
           <Route exact path={"/componets/TopBar/Question/Detail/Confirm"} component={Confirm} />
-
         </Switch>
       </BrowserRouter>
       <Copyright sx={{ mt: 5 }} />
