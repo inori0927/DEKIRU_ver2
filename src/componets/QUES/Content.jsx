@@ -9,7 +9,7 @@ import Basic from "./Basic";
 import Optional from "./Optional";
 import Confirm from "./Confirm";
 //import { KEYS, setItem, getItem, removeItem } from "./LocalStorage";
-
+import { Link  as LinkRouter } from 'react-router-dom';
 
 function getSteps() {
     return [
@@ -32,11 +32,13 @@ function getStepContent(stepIndex) {
     }
 }
 
+
 function Content() {
     const steps = getSteps();
     const [activeStep, setActiveStep] = React.useState(0);
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        
     };
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
@@ -44,7 +46,8 @@ function Content() {
     const handleReset = () => {
         setActiveStep(0);
     };
-    
+
+
     return (
         <Grid container>
             <Grid sm={2}/>
@@ -58,8 +61,9 @@ function Content() {
                 </Stepper>
                 {activeStep === steps.length ? (
                     <div>
-                        <Typography >全ステップの表示を完了</Typography>
+                        <Typography >全ステップ完了</Typography>
                         <Button onClick={handleReset}>リセット</Button>
+                        <Button >キャンセル</Button>
                     </div>
                 ) : (
                     <div>
@@ -70,7 +74,7 @@ function Content() {
                         >
                             戻る
                         </Button>
-                        <Button variant="contained" color="primary" onClick={handleNext}>
+                        <Button variant="contained" color="primary" onClick={handleNext} >
                             {activeStep === steps.length - 1 ? '送信' : '次へ'}
                         </Button>
                     </div>

@@ -7,9 +7,10 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Content from './Content';
+import Content from './QUES/Content';
 import QuestionList from './QuestionList';
-import Mypage from './Mypage';
+import Mypage from './USERS/Mypage';
+import { Link  as LinkRouter } from 'react-router-dom';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -57,7 +58,7 @@ export default function TopBar() {
   };
 
   return (
-    <Box sx={{ bgcolor: 'background.paper', width: 1000 }}>
+    <Box sx={{ bgcolor: 'background.paper', width: 1 }}>
       <AppBar position="static">
         <Tabs
           value={value}
@@ -76,8 +77,9 @@ export default function TopBar() {
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={value}
         onChangeIndex={handleChangeIndex}
+        
       >
-        <TabPanel value={value} index={0} dir={theme.direction}>
+        <TabPanel value={value} index={0} dir={theme.direction} >
           <Content />
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
