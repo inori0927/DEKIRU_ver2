@@ -9,7 +9,7 @@ import Example from './pages/Example';
 import Home from './pages/Home';
 import PostEdit from './pages/PostEdit';
 import Skyway from './pages/Skyway';
-import UserIndex from './pages/User/index';
+import UserIndex from './pages/User/UserIndex';
 
   function App() {
     return (

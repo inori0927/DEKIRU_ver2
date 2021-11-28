@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Button, Card } from '@material-ui/core';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import MainTable from '../../components/MainTable';
-import PostForm from '../../components/PostForm';
+import UserCreateForm from './UserCreateForm';
 
 
 //スタイルの定義
@@ -60,9 +60,11 @@ function UserIndex() {
     }
     //入力値を投げる
     await axios
-        .post('/api/users/create', {
+        .post('/api/users', {
             name: formData.name,
-            content: formData.content
+            email: formData.email,
+            password: '12345678',
+
         })
         .then((res) => {
             const tempUsers = users
@@ -82,7 +84,7 @@ function UserIndex() {
       rows.push({
           name: user.name,
           content: user.email,
-          editBtn: <Button color="secondary" variant="contained" key={user.id}  href={`/user/edit/${user.id}`}>編集</Button>,
+          editBtn: <Button color="secondary" variant="contained" key={user.id}  href={`/users/edit/${user.id}`}>編集</Button>,
           deleteBtn: <Button color="primary" variant="contained">完了</Button>,
       })
   );
@@ -95,7 +97,7 @@ function UserIndex() {
                         <h1>ユーザー一覧</h1>
 
                         <Card className={classes.card}>
-                            <PostForm data={formData} btnFunc={createUser} inputChange={inputChange}/>
+                            <UserCreateForm data={formData} btnFunc={createUser} inputChange={inputChange}/>
                         </Card>
                         <Card className={classes.card}>
                             {/* テーブル部分の定義 */}

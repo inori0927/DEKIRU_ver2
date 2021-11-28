@@ -17178,10 +17178,76 @@ function Skyway() {
 
 /***/ }),
 
-/***/ "./resources/js/pages/User/index.js":
-/*!******************************************!*\
-  !*** ./resources/js/pages/User/index.js ***!
-  \******************************************/
+/***/ "./resources/js/pages/User/UserCreateForm.js":
+/*!***************************************************!*\
+  !*** ./resources/js/pages/User/UserCreateForm.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/TextField/TextField.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Button/Button.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/createStyles.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["default"])(function (theme) {
+  return (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["default"])({
+    textArea: {
+      marginRight: theme.spacing(2)
+    }
+  });
+});
+
+function UserCreateFrom(props) {
+  var classes = useStyles();
+  var data = props.data,
+      inputChange = props.inputChange,
+      btnFunc = props.btnFunc;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      id: "name",
+      label: "\u540D\u524D",
+      variant: "outlined",
+      className: classes.textArea,
+      name: "name",
+      value: data.name,
+      onChange: inputChange
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      id: "email",
+      label: "\u30E1\u30FC\u30EB",
+      variant: "outlined",
+      className: classes.textArea,
+      name: "email",
+      value: data.email,
+      onChange: inputChange
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      color: "primary",
+      variant: "contained",
+      href: "/users",
+      onClick: btnFunc,
+      children: "\u767B\u9332"
+    })]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UserCreateFrom);
+
+/***/ }),
+
+/***/ "./resources/js/pages/User/UserIndex.js":
+/*!**********************************************!*\
+  !*** ./resources/js/pages/User/UserIndex.js ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -17199,7 +17265,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/createStyles.js");
 /* harmony import */ var _components_MainTable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/MainTable */ "./resources/js/components/MainTable.js");
-/* harmony import */ var _components_PostForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/PostForm */ "./resources/js/components/PostForm.js");
+/* harmony import */ var _UserCreateForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./UserCreateForm */ "./resources/js/pages/User/UserCreateForm.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -17295,9 +17361,10 @@ function UserIndex() {
 
             case 2:
               _context.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_2___default().post('/api/users/create', {
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().post('/api/users', {
                 name: formData.name,
-                content: formData.content
+                email: formData.email,
+                password: '12345678'
               }).then(function (res) {
                 var tempUsers = users;
                 tempUsers.push(res.data);
@@ -17330,7 +17397,7 @@ function UserIndex() {
       editBtn: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["default"], {
         color: "secondary",
         variant: "contained",
-        href: "/user/edit/".concat(user.id),
+        href: "/users/edit/".concat(user.id),
         children: "\u7DE8\u96C6"
       }, user.id),
       deleteBtn: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -17352,7 +17419,7 @@ function UserIndex() {
             children: "\u30E6\u30FC\u30B6\u30FC\u4E00\u89A7"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["default"], {
             className: classes.card,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_PostForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_UserCreateForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
               data: formData,
               btnFunc: createUser,
               inputChange: inputChange
@@ -17390,7 +17457,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Home */ "./resources/js/pages/Home.js");
 /* harmony import */ var _pages_PostEdit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/PostEdit */ "./resources/js/pages/PostEdit.js");
 /* harmony import */ var _pages_Skyway__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/Skyway */ "./resources/js/pages/Skyway.js");
-/* harmony import */ var _pages_User_index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/User/index */ "./resources/js/pages/User/index.js");
+/* harmony import */ var _pages_User_UserIndex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/User/UserIndex */ "./resources/js/pages/User/UserIndex.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -17413,7 +17480,7 @@ function App() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/users",
         exact: true,
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_User_index__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_User_UserIndex__WEBPACK_IMPORTED_MODULE_6__["default"], {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/example",
         exact: true,
