@@ -3,24 +3,26 @@ import ReactDOM from 'react-dom';
 import {
     BrowserRouter,
     Route,
-    Routes,
+    Switch,
   } from 'react-router-dom';
 import Example from './pages/Example';
 import Home from './pages/Home';
 import PostEdit from './pages/PostEdit';
 import Skyway from './pages/Skyway';
 import UserIndex from './pages/User/UserIndex';
+import DekiruApp from './pages/src/DekiruApp.jsx';
 
+//開発用サブページのルーティング
   function App() {
     return (
         <div>
-            <Routes>
-              <Route path='/' exact element={<Home />} />
-              <Route path='/users' exact element={<UserIndex />} />
-              <Route path='/example' exact element={<Example />} />
-              <Route path='/post/edit/:id' exact element={<PostEdit />} />
-              <Route path='/skyway' exact element={<Skyway />} />
-            </Routes>
+            <Switch>
+              <Route path='/' exact component={DekiruApp} />
+              <Route path='/users' exact component={UserIndex} />
+              <Route path='/example' exact component={Example} />
+              <Route path='/post/edit/:id' exact component={PostEdit} />
+              <Route path='/skyway' exact component={Skyway} />
+            </Switch>
         </div>
     );
 }
