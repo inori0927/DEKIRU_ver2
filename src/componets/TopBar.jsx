@@ -8,11 +8,12 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Content from './QUES/Content';
-import QuestionList from './QuestionList';
+import QuestionList from './QUES/QuestionList';
 import Mypage from './USERS/Mypage';
 import { Link  as LinkRouter } from 'react-router-dom';
 import QuestionPage from './QUES/QuestionPage'
 import QuestionUser from './QUES/QuestionUesr'
+import Movie from './Movie';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -89,6 +90,9 @@ export default function TopBar() {
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
           <QuestionUser />
+        </TabPanel>
+        <TabPanel value={value} index={3} dir={theme.direction}>
+          <Movie />
         </TabPanel>
       </SwipeableViews>
     </Box>

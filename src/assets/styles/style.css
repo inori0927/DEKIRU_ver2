@@ -66,3 +66,24 @@
     line-height: 1.7;
 }
 
+.Movie_Container- {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: 50% repeat(2, 25%);
+    gap: 5px 5px;
+    grid-auto-flow: row;
+  }
+  
+  .Movie { grid-area: 1 / 1 / 2 / 3; }
+  
+  .Share { grid-area: 2 / 1 / 3 / 2; }
+  
+  .Chat1 { grid-area: 3 / 1 / 4 / 3; }
+  
+  .Partner { grid-area: 2 / 2 / 3 / 3; }
+  
+  
+  
+  
+  
+  
