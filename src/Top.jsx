@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, {useState} from 'react';
+=======
+import React, { useState } from 'react';
+>>>>>>> c1c404e95dbd8a602cc80aa92aa8e13e35a8506a
 import './assets/styles/style.css'
 import { Grid } from '@material-ui/core';
 import Header from './componets/Heder';
@@ -12,6 +16,8 @@ import BasicDetail from './componets/USERS/BasicDetail';
 import Confirm from './componets/QUES/Confirm';
 import QuestionList from './componets/QUES/QuestionList';
 import Mypage from './componets/USERS/Mypage';
+import Notific from './componets/USERS/notific';
+import Setting from './componets/USERS/setting';
 import QuestionPage from './componets/QUES/QuestionPage';
 import UserAchievement from './componets/USERS/UserAchievement';
 
@@ -27,6 +33,7 @@ export default function Top() {
     return (
         <Grid container direction="column">
             <Header setValue={setValue} />
+<<<<<<< HEAD
             {value == "Mypage" ?
                 <Mypage />
                 :
@@ -48,9 +55,32 @@ export default function Top() {
                         </Switch>
                     </BrowserRouter>
                 </>
+=======
+            { value == "Mypage" ?
+            <Mypage />
+            : value == "notific" ?
+                <Notific />
+                : value == "setting" ?
+                    <Setting />
+                    : <>
+                        <isValue />
+                        <BrowserRouter>
+                            <Switch>
+                                <Route exact path="/" component={login} />
+                                <Route exact path="/componets/SignUp" component={SignUp} />
+                                <Route exact path="/componets/TopBar" component={TopBar} />
+                                <Route exact path={"/componets/TopBar/QuettionPage"} component={QuestionPage} />
+                                <Route exact path={"/componets/TopBar/Question"} component={Basic} />
+                                <Route exact path={"/componets/TopBar/QuestionList"} component={QuestionList} />
+                                <Route exact path={"/componets/TopBar/Mypage"} component={Mypage} />
+                                <Route exact path={"/componets/TopBar/Question/Detail"} component={BasicDetail} />
+                                <Route exact path={"/componets/TopBar/Question/Detail/Confirm"} component={Confirm} />
+                            </Switch>
+                        </BrowserRouter>
+                    </>
+>>>>>>> c1c404e95dbd8a602cc80aa92aa8e13e35a8506a
             }
             <Copyright sx={{ mt: 5 }} />
         </Grid>
-
     );
 }
