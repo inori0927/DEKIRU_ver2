@@ -61,7 +61,7 @@ export default function Mypage() {
         <BasicDetail />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <UserAchievement /> 
+        <UserAchievement />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <UserSkill />
