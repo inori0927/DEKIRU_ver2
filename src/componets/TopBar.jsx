@@ -13,6 +13,7 @@ import Mypage from './USERS/Mypage';
 import { Link  as LinkRouter } from 'react-router-dom';
 import QuestionPage from './QUES/QuestionPage'
 import QuestionUser from './QUES/QuestionUesr'
+import QuestionSearch from './QUES/QuestionSearch';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -85,7 +86,8 @@ export default function TopBar() {
           <Content />
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <QuestionList /> 
+          <QuestionSearch />
+          {/* <QuestionList />  */}
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
           <QuestionUser />
