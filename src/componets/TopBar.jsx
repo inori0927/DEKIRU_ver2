@@ -72,15 +72,13 @@ export default function TopBar() {
         >
           <Tab label="質問" {...a11yProps(0)} />
           <Tab label="質問一覧" {...a11yProps(1)} />
-          <Tab label="質問中" {...a11yProps(2)} />
-          <Tab label="" {...a11yProps(3)} />
+
         </Tabs>
       </AppBar>
       <SwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={value}
         onChangeIndex={handleChangeIndex}
-        
       >
         <TabPanel value={value} index={0} dir={theme.direction} >
           <Content />
@@ -88,9 +86,6 @@ export default function TopBar() {
         <TabPanel value={value} index={1} dir={theme.direction}>
           <QuestionSearch />
           {/* <QuestionList />  */}
-        </TabPanel>
-        <TabPanel value={value} index={2} dir={theme.direction}>
-          <QuestionUser />
         </TabPanel>
       </SwipeableViews>
     </Box>

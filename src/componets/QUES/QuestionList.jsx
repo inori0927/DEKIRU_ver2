@@ -16,6 +16,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Button from '@mui/material/Button';
 import { Link as LinkRouter } from 'react-router-dom';
+import { unstable_unsupportedProp } from '@mui/utils';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -28,8 +29,14 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function QuestionList() {
+export default function QuestionList(props) {
   const [expanded, setExpanded] = React.useState(false);
+  const UserId = props.UserId;
+  const Title = props.Title;
+  const Question = props.Question;
+  const Category_id = props.Category_id;
+  const Status = props.Status;
+  const create_at = props.create_at;
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -45,8 +52,8 @@ export default function QuestionList() {
           action={<IconButton aria-label="settings">
             <MoreVertIcon />
           </IconButton>}
-          title="DBからとってくる「Title」"
-          subheader="September 14, 2016（DBからとってくる）" />
+          title={Title}
+          subheader={create_at} />
         {/*画像の利用の場合使用
     <CardMedia
       component="img"
@@ -83,17 +90,7 @@ export default function QuestionList() {
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph>
-              Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
-              aside for 10 minutes.
-            </Typography>
-            <Typography paragraph>
-              Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
-              medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring
-              occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a
-              large plate and set aside, leaving chicken and chorizo in the pan. Add
-              pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook,
-              stirring often until thickened and fragrant, about 10 minutes. Add
-              saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
+              {Question}
             </Typography>
           </CardContent>
         </Collapse>
